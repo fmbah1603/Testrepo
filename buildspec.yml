@@ -26,9 +26,9 @@ phases:
       # build the docker image
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:$SHORT_GIT_COMMIT_ID -f Dockerfile .
-      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:latest -f Dockerfile .
-      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:$SERVICE_VERSION -f Dockerfile .
+      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:$SHORT_GIT_COMMIT_ID -f dockerfile .
+      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:latest -f dockerfile .
+      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO:$SERVICE_VERSION -f dockerfile .
 
   post_build:
     on-failure: ABORT
